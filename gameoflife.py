@@ -1,3 +1,4 @@
+
 import pygame
 from random import *
 import numpy as np
@@ -62,6 +63,7 @@ def editor():
 					if grid[i][j]:
 						rect = pygame.Rect(x, y, resolution-1, resolution-1)
 						pygame.draw.rect(window, (0,0,0), rect)
+			pygame.event.pump()
 			pygame.display.flip()
 		verify = 1
 		while(1 and verify):
@@ -100,7 +102,9 @@ def editor():
 					else :
 						new[i][j] = state;
 			grid = new
+			pygame.event.pump()
 			pygame.display.flip()
+			
 def random_mode():
 	pygame.init()
 	window = pygame.display.set_mode((width,height))
